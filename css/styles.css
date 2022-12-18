@@ -88,8 +88,6 @@ nav {
   padding: 15px;
   font-size: 14px;
   font-weight: 500;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .navigation_list > li {
@@ -123,8 +121,7 @@ nav {
 .secondary_list > li > a {
   font-size: 15px;
   font-weight: 300;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
   color: #000;
 }
 
@@ -175,8 +172,6 @@ nav {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .search_btn {
@@ -255,6 +250,11 @@ nav {
   border: none;
   border-radius: 30px;
   padding: 10px 20px;
+}
+
+.discover_search_form > input:focus-visible {
+  outline: none;
+  border: none;
 }
 
 .discover_btn {
@@ -356,6 +356,52 @@ nav {
 .join_list > li {
   font-family: "Source Sans Pro", Arial, sans-serif;
   opacity: 0.8;
+}
+
+.leaders_board_wrap {
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.leaders_board_header {
+  display: flex;
+  align-items: center;
+}
+
+.leaders_board_header > h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.activity_types > p {
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  border-radius: 50%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+}
+
+.all_time {
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLighterGreen), 1) 0%,
+    rgba(var(--tmdbLightGreen), 1) 100%
+  );
+}
+
+.week {
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLogoOrange), 1) 0%,
+    rgba(var(--tmdbLogoRed), 1) 100%
+  );
 }
 
 footer {
