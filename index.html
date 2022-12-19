@@ -21,6 +21,9 @@
     <header>
       <div class="container">
         <div class="navigation_menu">
+          <div class="nav-toggle">
+            <div class="bar"></div>
+          </div>
           <div class="navigation_bar">
             <a href="/" class="logo">
               <img
@@ -66,6 +69,14 @@
               </ul>
             </nav>
           </div>
+          <div class="secondary_logo">
+            <a href="/">
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+                alt="secondary_logo"
+              />
+            </a>
+          </div>
           <div class="login_section">
             <nav>
               <ul class="login_list">
@@ -81,16 +92,17 @@
                 <li>
                   <a href="/">Join TMDB</a>
                 </li>
-                <li>
-                  <button class="search_btn">
-                    <img
-                      src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
-                      alt="search_img"
-                    />
-                  </button>
-                </li>
+                <!-- <li>
+
+                </li> -->
               </ul>
             </nav>
+            <button class="search_btn">
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
+                alt="search_img"
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -122,15 +134,71 @@
           <div class="popular_movies_head">
             <h3>What's Popular</h3>
             <div class="popular_movies_buttons">
-              <button data-id="on-tv" class="pop_movie_change active_movie">
+              <button
+                data-id="on-tv"
+                class="popular_movie_btn pop_movie_change active_movie"
+              >
                 On TV
               </button>
-              <button data-id="theatre" class="pop_movie_change">
+              <button
+                data-id="theatre"
+                class="popular_movie_btn pop_movie_change"
+              >
                 In Theaters
               </button>
             </div>
           </div>
           <div class="popular_movies_body"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="trailer_wrapper">
+          <div class="trailer_content">
+            <div class="popular_movies_head">
+              <h3>Latest Trailers</h3>
+              <div class="trailer_type_buttons">
+                <button
+                  data-id="on-tv"
+                  class="trailer_movie_btn trailer_movie_change active_movie"
+                >
+                  On TV
+                </button>
+                <button
+                  data-id="theatre"
+                  class="trailer_movie_btn trailer_movie_change"
+                >
+                  In Theaters
+                </button>
+              </div>
+            </div>
+            <div class="trailer_movies_body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="popular_movies_wrapper">
+          <div class="popular_movies_head">
+            <h3>Trending</h3>
+            <div class="popular_movies_buttons">
+              <button
+                data-id="today"
+                class="trending_movie_btn pop_movie_change active_movie"
+              >
+                Today
+              </button>
+              <button
+                data-id="week"
+                class="trending_movie_btn pop_movie_change"
+              >
+                This Week
+              </button>
+            </div>
+          </div>
+          <div class="trending_movies_body"></div>
         </div>
       </div>
     </section>
@@ -194,6 +262,7 @@
                 src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
                 alt="Movie_db_img"
               />
+              <button class="community_button">Join the Community</button>
             </div>
             <div>
               <h3>THE BASICS</h3>

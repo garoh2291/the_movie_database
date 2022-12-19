@@ -54,10 +54,18 @@ header {
   justify-content: space-between;
 }
 
+.secondary_logo {
+  display: none;
+}
+
 .navigation_bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav-toggle {
+  display: none;
 }
 
 .logo {
@@ -131,6 +139,8 @@ nav {
 
 .login_section {
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .login_list {
@@ -282,12 +292,13 @@ nav {
 
 .popular_movies_wrapper {
   width: 100%;
-  padding: 30px 40px;
+  padding-top: 30px;
 }
 
 .popular_movies_head {
   display: flex;
   align-items: center;
+  padding-left: 40px;
 }
 
 .popular_movies_head > h3 {
@@ -309,7 +320,7 @@ nav {
   background-color: transparent;
   border: none;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .pop_movie_change.active_movie {
@@ -318,13 +329,25 @@ nav {
 }
 
 .popular_movies_body {
-  min-height: 355px;
   padding-bottom: 20px;
+  padding-top: 20px;
   overflow-y: hidden;
   overflow-x: scroll;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.trending_movies_body {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* Movie Cards */
@@ -333,15 +356,193 @@ nav {
   width: 150px;
   min-width: 150px;
   min-height: 225px;
-
   margin-right: 20px;
+  cursor: pointer;
 }
 
+.movie_img {
+  position: relative;
+  width: 100%;
+  min-height: 225px;
+  height: 225px;
+  border-radius: 8px;
+  background-position: center;
+  background-size: contain;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.additional_details {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.additional_details:hover {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%)
+    hue-rotate(156deg) brightness(98%) contrast(99%);
+}
+
+.raiting_details {
+  position: absolute;
+  bottom: -19px;
+  left: 10px;
+  width: 38px;
+  height: 38px;
+  padding: 2px;
+  background-color: #081c22;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+.raiting_details sup {
+  font-size: 0.5em;
+}
+
+.additional_details_content {
+  width: 100%;
+  padding: 26px 10px 12px 10px;
+}
+
+.additional_details_content > h2 {
+  font-size: 1em;
+}
+
+.additional_details_content > p {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.6);
+}
 /* -----------*/
 
-/* .join_today_section {
-    
-} */
+/* Trailer section */
+
+.trailer_wrapper {
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  background-image: url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg");
+}
+
+.trailer_content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbDarkBlue), 0.75) 0%,
+    rgba(var(--tmdbDarkBlue), 0.75) 100%
+  );
+  padding-top: 30px;
+}
+
+.trailer_content h3 {
+  font-weight: 600;
+}
+
+.trailer_type_buttons {
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid rgba(var(--tmdbLightGreen), 1);
+  border-radius: 30px;
+}
+
+.trailer_movie_change {
+  padding: 4px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.trailer_movie_change.active_movie {
+  color: rgba(var(--tmdbDarkBlue), 1);
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLighterGreen), 1) 0%,
+    rgba(var(--tmdbLightGreen), 1) 100%
+  );
+}
+
+.trailer_movies_body {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.traler_card {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  margin-right: 20px;
+  height: auto;
+}
+
+.trailer_card_img {
+  position: relative;
+  width: 300px;
+  height: calc(300px / 1.78);
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.play_btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.play_btn > img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: invert(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.trailer_card_img:hover {
+  transform: scale(1.05);
+}
+
+.trailer_card_img:hover .play_btn > img {
+  transform: scale(1.3);
+}
+
+.trailer_card_text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ------- */
 
 .join_today_wrapper {
   width: 100%;
@@ -390,7 +591,7 @@ nav {
 
 .join_today_btn {
   border: 2px solid #805be7;
-
+  cursor: pointer;
   color: #fff;
   margin-top: 20px;
   font-weight: 600;
@@ -568,10 +769,185 @@ footer {
 }
 
 .join_footer {
-  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: -15px;
+}
+
+.community_button {
+  border-color: #fff;
+  background-color: #fff;
+  color: rgba(var(--tmdbLightBlue), 1);
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: normal;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin-top: 30px;
+  white-space: nowrap;
+  text-overflow: hidden;
 }
 
 .join_footer > img {
   width: 130px;
   height: 94px;
+}
+
+/*scroller */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c7c7c7;
+}
+
+@media (max-width: 980px) {
+  /*Header */
+
+  .navigation_bar {
+    display: none;
+  }
+
+  .login_section > nav {
+    display: none;
+  }
+
+  .secondary_logo {
+    display: block;
+    width: 55px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .secondary_logo > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .secondary_logo > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .nav-toggle {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .nav-toggle > .bar {
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before,
+  .nav-toggle > .bar::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before {
+    width: 25px;
+    transform: translateY(-8px);
+    right: 0;
+  }
+  .nav-toggle > .bar::after {
+    width: 25px;
+    transform: translateY(8px);
+  }
+
+  .nav-toggle.open > .bar {
+    transform: translateX(-40px);
+    background: transparent;
+  }
+
+  .nav-toggle.open > .bar::after {
+    transform: rotate(-45deg) translate(26px, 26px);
+  }
+
+  .nav-toggle.open > .bar::before {
+    width: 25px;
+    transform: rotate(45deg) translate(26px, -26px);
+  }
+  /* ----- */
+
+  .leaderboard_item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .leaderboard_item:nth-child(odd) {
+    padding: unset;
+  }
+
+  .leaderboard_item:nth-child(even) {
+    padding: unset;
+  }
+
+  .join_today_info {
+    flex-wrap: wrap;
+  }
+
+  .join_today_secondary {
+    margin-top: 30px;
+  }
+
+  /* Footer */
+
+  .footer_content {
+    justify-content: flex-start;
+  }
+
+  .footer_content > nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .join_footer > img {
+    display: none;
+  }
+
+  .footer_content > nav > div {
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+
+  .community_button {
+    margin-top: 0;
+  }
 }

@@ -31,7 +31,7 @@ export const LEADER_BOARD = [
   },
   {
     name: "Boon",
-    img: undefined,
+    img: "https://www.themoviedb.org/t/p/w128_and_h128_face/1W6EIMm6ugCQAxzfwsV5xUxGJk4.jpg",
     totalEdits: 38835,
     weeklyEdits: 3664,
   },
