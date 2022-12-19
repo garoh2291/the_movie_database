@@ -1,3 +1,4 @@
-import { leader } from "./leader-board.js";
-console.log("js is working");
-console.log(leader);
+import { getLeaders } from "./leader-board.js";
+import { getPopularMovies } from "./popular-movies.js";
+getLeaders();
+getPopularMovies();

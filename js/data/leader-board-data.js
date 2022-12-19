@@ -30,7 +30,7 @@ export const LEADER_BOARD = [
     weeklyEdits: 3681,
   },
   {
-    name: "𝓑𝓸𝓸𝓷",
+    name: "Boon",
     img: undefined,
     totalEdits: 38835,
     weeklyEdits: 3664,
