@@ -6,7 +6,7 @@ export function getPopularMovies() {
 
   const onTv = POPULAR_MOVIES.filter((movie) => movie.type === "on-tv");
 
-  getMovies(onTv, ".popular_movies_body");
+  getMovies(onTv, ".popular");
 
   for (let btn of $btns) {
     btn.onclick = function () {
@@ -20,7 +20,7 @@ export function getPopularMovies() {
       );
 
       console.log(movieList);
-      getMovies(movieList, ".popular_movies_body");
+      getMovies(movieList, ".popular");
       btn.classList.add("active_movie");
     };
   }
@@ -29,7 +29,7 @@ export function getPopularMovies() {
 export function getTrendingMovies() {
   const $btns = document.querySelectorAll(".trending_movie_btn");
   const today = TRENDING_MOVIES.filter((movie) => movie.type === "today");
-  getMovies(today, ".trending_movies_body");
+  getMovies(today, ".trending");
   for (let btn of $btns) {
     btn.onclick = function () {
       for (let btn of $btns) {
@@ -42,7 +42,7 @@ export function getTrendingMovies() {
       );
 
       console.log(movieList);
-      getMovies(movieList, ".trending_movies_body");
+      getMovies(movieList, ".trending");
       btn.classList.add("active_movie");
     };
   }

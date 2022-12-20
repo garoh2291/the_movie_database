@@ -9,5 +9,15 @@ getTrailers();
 const $menuBtn = document.querySelector(".nav-toggle");
 
 $menuBtn.onclick = function () {
-  this.classList.toggle("open");
+  document.querySelector(".navigation_bar").classList.toggle("open");
 };
+
+const $navButtons = document.querySelectorAll(".navigation_list > li");
+
+console.log($navButtons);
+
+for (let btn of $navButtons) {
+  btn.onclick = function () {
+    this.classList.toggle("opened_menu");
+  };
+}
