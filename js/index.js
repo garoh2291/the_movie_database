@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { getLeaders } from "./leader-board.js";
 import { getPopularMovies, getTrendingMovies } from "./popular-movies.js";
 import { getTrailers } from "./trailers.js";
@@ -21,3 +22,6 @@ for (let btn of $navButtons) {
     this.classList.toggle("opened_menu");
   };
 }
+=======
+console.log("js is working");
+>>>>>>> main
