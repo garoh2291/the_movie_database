@@ -313,6 +313,12 @@ nav {
   padding-top: 30px;
 }
 
+.trending_wrapper {
+  background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+  background-position: 50% 165px;
+  background-repeat: no-repeat;
+}
+
 .popular_movies_head {
   display: flex;
   align-items: center;
@@ -352,6 +358,7 @@ nav {
   overflow-y: hidden;
   overflow-x: scroll;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   padding-left: 40px;
   padding-right: 40px;
@@ -392,6 +399,7 @@ nav {
   right: 8px;
   opacity: 0.6;
   cursor: pointer;
+  z-index: 222;
 }
 
 .additional_details:hover {
@@ -504,6 +512,7 @@ nav {
   max-width: 300px;
   margin-right: 20px;
   height: auto;
+  position: relative;
 }
 
 .trailer_card_img {
@@ -550,6 +559,94 @@ nav {
 .trailer_card_text {
   margin-top: 10px;
   text-align: center;
+}
+
+/* ------- */
+
+/* settings */
+
+.more_settings {
+  display: none;
+}
+
+.setting {
+  padding: 4px 0;
+}
+
+.setting > p {
+  color: #000;
+  font-weight: 600;
+  padding: 6px 20px;
+  font-size: 0.9em;
+}
+
+.setting > a {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.setting:last-child > a {
+  justify-content: space-between;
+}
+
+.setting > a > i {
+  margin-left: 5px;
+  color: rgba(var(--tmdbDarkBlue), 1);
+}
+
+.setting > a:hover {
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  color: #fff;
+}
+
+.setting:first-child {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.15);
+}
+
+.cover_card {
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.movie_card.open_settings .cover_card {
+  visibility: visible;
+  z-index: 500;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.movie_card.open_settings .more_settings {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  width: 271px;
+  top: 30px;
+  left: -10px;
+  border: 1px solid rgba(33, 37, 41, 0.15);
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.traler_card.open_settings .more_settings {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  width: 271px;
+  top: 40px;
+  left: 50px;
+  border: 1px solid rgba(33, 37, 41, 0.15);
+  border-radius: 8px;
+  z-index: 999;
+  color: #000;
 }
 
 /* ------- */

@@ -30,9 +30,19 @@ function getTrailer(movies, selector) {
 
     $trailerBody.innerHTML += `
         <div class="traler_card">
+            <div class="more_settings">
+                <div class="setting">
+                    <p>Want to rate or add this item to a list?</p>
+                    <a href="#">Login <i class='bx bxs-chevron-right'></i></a>
+                </div>
+                <div class="setting">
+                    <p>Not a member?</p>
+                    <a href="#">Sign up and join the community <i class='bx bxs-chevron-right'></i></a>
+                </div>
+            </div>
             <div class="trailer_card_img" style="background-image:url(${movie.img})">
                    <div class="additional_details"> 
-                        <img src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf.svg" alt="additional_menu" />
+                        <img data-id="setting" src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf.svg" alt="additional_menu" />
                    </div>
                    <div class="play_btn">
                         <img src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-175-play-806cb05551791b8dedd7f8d38fd3bd806e2d397fcfeaa00a5cc9129f0819fd07.svg" alt="play-button" />

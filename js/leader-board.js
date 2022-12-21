@@ -1,4 +1,5 @@
 import { LEADER_BOARD } from "./data/leader-board-data.js";
+import { getSizeAllTime, getSizeWeekly } from "./helpers/helpers.js";
 
 export function getLeaders() {
   const $leadersBoard = document.querySelector(".leaders_board_content");
@@ -32,21 +33,5 @@ export function getLeaders() {
 
         </div>
     </div>`;
-  }
-}
-
-function getSizeWeekly(count) {
-  if (count > 10000) {
-    return 100;
-  } else {
-    return Math.floor(count / 100);
-  }
-}
-
-function getSizeAllTime(count) {
-  if (count > 1000000) {
-    return 100;
-  } else {
-    return Math.floor(count / 10000);
   }
 }
