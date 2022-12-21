@@ -14,7 +14,6 @@ export function getTrailers() {
         (movie) => movie.type === filterCategory
       );
 
-      console.log(movieList);
       getTrailer(movieList, ".trailer_movies_body");
       btn.classList.add("active_movie");
     };

@@ -14,13 +14,11 @@ export function getPopularMovies() {
       for (let btn of $btns) {
         btn.classList.remove("active_movie");
       }
-      console.log(btn.getAttribute("data-id"));
       const filterCategory = btn.getAttribute("data-id");
       const movieList = POPULAR_MOVIES.filter(
         (movie) => movie.type === filterCategory
       );
 
-      console.log(movieList);
       getMovies(movieList, ".popular");
       btn.classList.add("active_movie");
     };
@@ -36,13 +34,11 @@ export function getTrendingMovies() {
       for (let btn of $btns) {
         btn.classList.remove("active_movie");
       }
-      console.log(btn.getAttribute("data-id"));
       const filterCategory = btn.getAttribute("data-id");
       const movieList = TRENDING_MOVIES.filter(
         (movie) => movie.type === filterCategory
       );
 
-      console.log(movieList);
       getMovies(movieList, ".trending");
       btn.classList.add("active_movie");
     };

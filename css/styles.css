@@ -200,6 +200,45 @@ nav {
   position: relative;
 }
 
+.auth_content_mobile {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: -100px;
+  width: 180px;
+  filter: invert(1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.visible {
+  display: block;
+}
+
+.auth_content_mobile > .setting > a {
+  font-size: 1em;
+}
+
+.auth_content_mobile > .setting > a {
+  padding: 10px 20px;
+}
+
+.auth_content_mobile > .setting:first-child {
+  position: relative;
+}
+
+.auth_content_mobile > .setting:first-child::after {
+  content: "";
+  position: absolute;
+  left: 106px;
+  top: -5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 5px solid #fff;
+}
+
 .search_btn {
   border: none;
   width: 29px;

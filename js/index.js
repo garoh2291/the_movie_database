@@ -8,6 +8,7 @@ getTrendingMovies();
 getTrailers();
 
 const $menuBtn = document.querySelector(".nav-toggle");
+const $loginBtn = document.querySelector(".auth_btn");
 
 $menuBtn.onclick = function () {
   document.querySelector(".navigation_bar").classList.toggle("open");
@@ -25,10 +26,14 @@ window.onclick = function (e) {
   const $movieCard = document.querySelectorAll(".movie_card");
   const $trailerCard = document.querySelectorAll(".traler_card");
   if (e.target.getAttribute("data-id") === "setting") {
-    removeSetting($movieCard, $trailerCard);
+    removeSetting(e, $movieCard, $trailerCard);
     const addBtn = e.target.parentElement.parentElement.parentElement;
     addBtn.classList.toggle("open_settings");
   } else {
-    removeSetting($movieCard, $trailerCard);
+    removeSetting(e, $movieCard, $trailerCard);
   }
+};
+
+$loginBtn.onclick = function () {
+  document.querySelector(".auth_content_mobile").classList.add("visible");
 };

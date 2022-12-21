@@ -26,11 +26,14 @@ export function getPopularity(num) {
   }
 }
 
-export function removeSetting(movies, trailers) {
+export function removeSetting(e, movies, trailers) {
   for (let card of movies) {
     card.classList.remove("open_settings");
   }
   for (let card of trailers) {
     card.classList.remove("open_settings");
+  }
+  if (e.target.parentElement.className !== "auth_btn") {
+    document.querySelector(".auth_content_mobile").classList.remove("visible");
   }
 }
