@@ -15,12 +15,16 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/media.css" />
   </head>
   <body>
     <header>
       <div class="container">
         <div class="navigation_menu">
+          <div class="nav-toggle">
+            <div class="bar"></div>
+          </div>
           <div class="navigation_bar">
             <a href="/" class="logo">
               <img
@@ -31,7 +35,7 @@
             <nav>
               <ul class="navigation_list">
                 <li>
-                  <a href="/">Movies</a>
+                  <a href="#">Movies</a>
                   <ul class="secondary_list">
                     <li><a href="/">Popular</a></li>
                     <li><a href="/">Now Playing</a></li>
@@ -40,7 +44,7 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="/">TV Shows</a>
+                  <a href="#">TV Shows</a>
                   <ul class="secondary_list">
                     <li><a href="/">Popular</a></li>
                     <li><a href="/">Airing Today</a></li>
@@ -49,13 +53,13 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="/">People</a>
+                  <a href="#">People</a>
                   <ul class="secondary_list">
                     <li><a href="/">Popular People</a></li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/">More</a>
+                  <a href="#">More</a>
                   <ul class="secondary_list">
                     <li><a href="/">Discussions</a></li>
                     <li><a href="/">Leaderboard</a></li>
@@ -63,8 +67,28 @@
                     <li><a href="/">API</a></li>
                   </ul>
                 </li>
+                <li class="nav_additional_menu">
+                  <ul class="secondary_list">
+                    <li><a href="/">Contribution Bible</a></li>
+                    <li><a href="/">Apps</a></li>
+                    <li><a href="/">Discussions</a></li>
+                    <li><a href="/">Leaderboard</a></li>
+                    <li><a href="/">API</a></li>
+                    <li><a href="/">Support</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Login</a></li>
+                  </ul>
+                </li>
               </ul>
             </nav>
+          </div>
+          <div class="secondary_logo">
+            <a href="/">
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+                alt="secondary_logo"
+              />
+            </a>
           </div>
           <div class="login_section">
             <nav>
@@ -81,16 +105,31 @@
                 <li>
                   <a href="/">Join TMDB</a>
                 </li>
-                <li>
-                  <button class="search_btn">
-                    <img
-                      src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
-                      alt="search_img"
-                    />
-                  </button>
-                </li>
+                <!-- <li>
+
+                </li> -->
               </ul>
             </nav>
+            <button class="auth_btn">
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-7de7dfcae838579a18f4eebc5b8847230d154718e481c5cd01c477cfcbc85993.svg"
+                alt="login"
+              />
+              <div class="auth_content_mobile">
+                <div class="setting">
+                  <a href="#">Login</a>
+                </div>
+                <div class="setting">
+                  <a href="#">Sign Up</a>
+                </div>
+              </div>
+            </button>
+            <button class="search_btn">
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
+                alt="search_img"
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -113,6 +152,80 @@
               <button type="submit" class="discover_btn">Search</button>
             </form>
           </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="popular_movies_wrapper">
+          <div class="popular_movies_head">
+            <h3>What's Popular</h3>
+            <div class="popular_movies_buttons">
+              <button
+                data-id="on-tv"
+                class="popular_movie_btn pop_movie_change active_movie"
+              >
+                On TV
+              </button>
+              <button
+                data-id="theatre"
+                class="popular_movie_btn pop_movie_change"
+              >
+                In Theaters
+              </button>
+            </div>
+          </div>
+          <div class="popular popular_movies_body"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="trailer_wrapper">
+          <div class="trailer_content">
+            <div class="popular_movies_head">
+              <h3>Latest Trailers</h3>
+              <div class="trailer_type_buttons">
+                <button
+                  data-id="on-tv"
+                  class="trailer_movie_btn trailer_movie_change active_movie"
+                >
+                  On TV
+                </button>
+                <button
+                  data-id="theatre"
+                  class="trailer_movie_btn trailer_movie_change"
+                >
+                  In Theaters
+                </button>
+              </div>
+            </div>
+            <div class="trailer_movies_body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="popular_movies_wrapper trending_wrapper">
+          <div class="popular_movies_head">
+            <h3>Trending</h3>
+            <div class="popular_movies_buttons">
+              <button
+                data-id="today"
+                class="trending_movie_btn pop_movie_change active_movie"
+              >
+                Today
+              </button>
+              <button
+                data-id="week"
+                class="trending_movie_btn pop_movie_change"
+              >
+                This Week
+              </button>
+            </div>
+          </div>
+          <div class="trending popular_movies_body"></div>
         </div>
       </div>
     </section>
@@ -153,6 +266,20 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="container">
+        <div class="leaders_board_wrap">
+          <div class="leaders_board_header">
+            <h3>Leaderboard</h3>
+            <div class="activity_types">
+              <p><span class="dot all_time"></span> All Time Edits</p>
+              <p><span class="dot week"></span> This Week</p>
+            </div>
+          </div>
+          <div class="leaders_board_content"></div>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <div class="footer_content">
@@ -162,6 +289,7 @@
                 src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
                 alt="Movie_db_img"
               />
+              <button class="community_button">Join the Community</button>
             </div>
             <div>
               <h3>THE BASICS</h3>
@@ -202,6 +330,6 @@
         </div>
       </div>
     </footer>
-    <script src="./js/index.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
   </body>
 </html>
