@@ -1,0 +1,160 @@
+.movie_card_box {
+  width: 180px;
+  min-width: 150px;
+  min-height: 326px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 5px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.cover_card {
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.movie_card_box.open_settings .cover_card {
+  visibility: visible;
+  z-index: 500;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.more_settings {
+  display: none;
+}
+
+.setting {
+  padding: 4px 0;
+}
+
+.setting > p {
+  color: #000;
+  font-weight: 600;
+  padding: 6px 20px;
+  font-size: 0.9em;
+}
+
+.setting > a {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.setting:last-child > a {
+  justify-content: space-between;
+}
+
+.setting > a > i {
+  margin-left: 5px;
+  color: rgba(var(--tmdbDarkBlue), 1);
+}
+
+.setting > a:hover {
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  color: #fff;
+}
+
+.setting:first-child {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.15);
+}
+
+.movie_card_box.open_settings .more_settings {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  width: 271px;
+  top: 30px;
+  left: -10px;
+  border: 1px solid rgba(33, 37, 41, 0.15);
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.movie_img {
+  position: relative;
+  width: 100%;
+  min-height: 225px;
+  height: 225px;
+  border-radius: 8px 8px 0px 0px;
+  background-position: center;
+  background-size: contain;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.additional_details {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  opacity: 0.6;
+  cursor: pointer;
+  z-index: 222;
+}
+
+.additional_details:hover {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%)
+    hue-rotate(156deg) brightness(98%) contrast(99%);
+}
+
+.raiting_details {
+  position: absolute;
+  bottom: -19px;
+  left: 10px;
+  width: 38px;
+  height: 38px;
+  padding: 2px;
+  background-color: #081c22;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+.raiting_details sup {
+  font-size: 0.5em;
+}
+
+.additional_details_content {
+  width: 100%;
+  padding: 26px 10px 12px 10px;
+}
+
+.additional_details_content > h2 {
+  font-size: 1em;
+}
+
+.additional_details_content > p {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 1110px) {
+  .movie_card_box {
+    width: 150px;
+  }
+}
+
+@media (max-width: 1010px) {
+  .movie_card_box {
+    width: 180px;
+  }
+}
