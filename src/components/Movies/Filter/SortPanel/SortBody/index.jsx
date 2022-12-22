@@ -1,9 +1,12 @@
 import { SORT_ITEMS } from "../../../../../data";
 import "./styles.css";
 
-export const SortBody = () => {
+export const SortBody = ({ onFilter }) => {
   const changeQuery = (e) => {
-    console.log(e.target.value);
+    onFilter({
+      qeuryRoute: "sort_by",
+      queryValue: e.target.value,
+    });
   };
 
   return (

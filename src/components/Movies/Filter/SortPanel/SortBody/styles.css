@@ -15,10 +15,21 @@
   background-color: #e4e7eb;
   border-radius: 4px;
   border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.sort_panel_body > select > option {
+  padding: 5px 15px;
+}
+
+.sort_panel_body > select:focus-visible {
+  border: none;
+  outline: none;
 }
 
 select {
   -moz-appearance: none; /* Firefox */
   -webkit-appearance: none; /* Safari and Chrome */
-  appearance: none;
+  appearance: initial;
 }

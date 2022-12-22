@@ -1,37 +1,50 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { API_KEY } from "../../data";
+import { generateQuery, QUERY_ARR } from "../../helpers/query";
 import { setMoviesThunk } from "../../Redux/movieSlice";
 import { Body } from "./Body";
 import { FilterSection } from "./Filter";
 import "./styles.css";
 export const Movies = () => {
-  const [isFetching, setIsFetching] = useState(true);
   const [page, setPage] = useState(1);
+  const [queryArray, setQueryArray] = useState(QUERY_ARR);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (isFetching) {
-      dispatch(
-        setMoviesThunk(
-          `api_key=${API_KEY}&page=${page}&language=en-US&sort_by=popularity.desc&include_adult=false`
-        )
-      );
-      setIsFetching(false);
-      setPage((prev) => prev + 1);
+
+  const getMovieFilter = (filterEntries) => {
+    const newArr = queryArray.filter((item) => {
+      return item.qeuryRoute === filterEntries.qeuryRoute;
+    });
+    if (newArr.length === 0) {
+      setQueryArray((prev) => {
+        return [...prev, filterEntries];
+      });
+    } else {
+      setQueryArray((prev) => {
+        return prev.map((item) => {
+          if (item.qeuryRoute === filterEntries.qeuryRoute) {
+            return filterEntries;
+          }
+          return item;
+        });
+      });
     }
-  }, [isFetching, dispatch, page]);
+    setPage(1);
+  };
+
+  useEffect(() => {
+    const generatedQuery = generateQuery(queryArray);
+    const query = `${generatedQuery}page=${page}&`;
+
+    dispatch(setMoviesThunk({ query, page }));
+  }, [dispatch, page, queryArray]);
 
   const newItemsHandler = () => {
-    setIsFetching(true);
+    setPage((prev) => prev + 1);
   };
   return (
     <div className="movies_wrapper">
-      <FilterSection />
-      <Body
-        page={page}
-        onHandler={newItemsHandler}
-        setIsFetching={setIsFetching}
-      />
+      <FilterSection onFilter={getMovieFilter} />
+      <Body page={page} onHandler={newItemsHandler} setPage={setPage} />
     </div>
   );
 };

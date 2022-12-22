@@ -3,7 +3,7 @@ import { PanelHead } from "./PanelHead";
 import { SortBody } from "./SortBody";
 import "./styles.css";
 
-export const SortPanel = () => {
+export const SortPanel = ({ onFilter }) => {
   const [isVisible, setIsVisible] = useState(true);
   const changeHandle = () => {
     setIsVisible((prev) => !prev);
@@ -11,7 +11,7 @@ export const SortPanel = () => {
   return (
     <div className={`sort_panel ${isVisible ? "is_panel_open" : ""}`}>
       <PanelHead isVisible={isVisible} changeHandle={changeHandle} />
-      <SortBody />
+      <SortBody onFilter={onFilter} />
     </div>
   );
 };

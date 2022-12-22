@@ -33,11 +33,12 @@ export const MovieCard = (props) => {
           </Link>
         </div>
       </div>
-      <div
-        className="movie_img"
-        style={{ backgroundImage: `url("${IMG_URL}${movie.poster_path}")` }}
-      >
-        {" "}
+      <div className="movie_img">
+        {movie.poster_path ? (
+          <img src={`${IMG_URL}${movie.poster_path}`} alt={`${movie.title}`} />
+        ) : (
+          ""
+        )}
         <div className="additional_details">
           <img
             data-id="setting"
