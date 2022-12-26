@@ -114,6 +114,93 @@ export const NAVIGATION_LINKS = {
   },
 };
 
+export const FOOTER_LINKS = {
+  basic: {
+    label: "THE BASICS",
+    list: [
+      {
+        label: "About TMDB",
+        link: "",
+      },
+      {
+        label: "Contact Us",
+        link: "",
+      },
+      {
+        label: "Support Forums",
+        link: "",
+      },
+      {
+        label: "API",
+        link: "",
+      },
+      {
+        label: "System Status",
+        link: "",
+      },
+      {
+        label: "",
+        link: "",
+      },
+    ],
+  },
+  involved: {
+    label: "GET INVOLVED",
+    list: [
+      {
+        label: "Contribution Bible",
+        link: "",
+      },
+      {
+        label: "Add New Movie",
+        link: "",
+      },
+      {
+        label: "Add New TV Show",
+        link: "",
+      },
+    ],
+  },
+  community: {
+    label: "COMMUNITY",
+    list: [
+      {
+        label: "Guidelines",
+        link: "",
+      },
+      {
+        label: "Discussions",
+        link: "",
+      },
+      {
+        label: "Leaderboard",
+        link: "",
+      },
+      {
+        label: "Twitter",
+        link: "",
+      },
+    ],
+  },
+  legal: {
+    label: "LEGAL",
+    list: [
+      {
+        label: "Terms of Use",
+        link: "",
+      },
+      {
+        label: "API Terms of Use",
+        link: "",
+      },
+      {
+        label: "Privacy Policy",
+        link: "",
+      },
+    ],
+  },
+};
+
 export const SORT_ITEMS = [
   {
     query: "popularity.desc",

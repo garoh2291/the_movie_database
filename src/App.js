@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import { removeSetting } from "./helpers";
+import { Footer } from "./Layout/Footer";
 import { Header } from "./Layout/Header";
 import { RouteComponent } from "./Routes";
 
@@ -20,6 +21,7 @@ function App() {
       <div className="App">
         <Header />
         <RouteComponent />
+        <Footer />
       </div>
     </BrowserRouter>
   );
