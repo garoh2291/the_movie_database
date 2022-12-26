@@ -1,4 +1,4 @@
-.sort_panel {
+.filter-panel {
   width: 100%;
   min-width: 100%;
   height: 50px;
@@ -8,6 +8,11 @@
   overflow: hidden;
 }
 
-.is_panel_open {
+.filter-panel:not(:first-child) {
+  margin-top: 20px;
+}
+
+.is-panel-open {
   height: auto;
+  overflow: visible;
 }

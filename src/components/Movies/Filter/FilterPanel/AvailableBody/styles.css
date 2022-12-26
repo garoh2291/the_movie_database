@@ -1,0 +1,8 @@
+.availability-categories {
+  width: 100%;
+  display: none;
+}
+
+.show-categories {
+  display: block;
+}

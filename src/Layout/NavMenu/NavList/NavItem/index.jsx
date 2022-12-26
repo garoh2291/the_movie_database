@@ -10,7 +10,7 @@ export const NavItem = (props) => {
     setIsOpen((prev) => !prev);
   };
   return (
-    <li onClick={onOpenHandler} className={isOpen ? "opened_menu" : ""}>
+    <li onClick={onOpenHandler} className={isOpen ? "opened-menu" : ""}>
       <button>{category.label}</button>
       <SecondaryList list={category.list} />
     </li>

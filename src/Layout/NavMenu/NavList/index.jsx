@@ -7,7 +7,7 @@ export const NavList = () => {
   const { movies, shows, people, more, additional } = NAVIGATION_LINKS;
   return (
     <nav>
-      <ul className="navigation_list">
+      <ul className="navigation-list">
         <NavItem category={movies} />
         <NavItem category={shows} />
         <NavItem category={people} />
@@ -16,7 +16,7 @@ export const NavList = () => {
           <button>{more.label}</button>
           <SecondaryList list={more.list} />
         </li>
-        <li className="nav_additional_menu">
+        <li className="nav-additional-menu">
           <SecondaryList list={additional.list} />
         </li>
       </ul>

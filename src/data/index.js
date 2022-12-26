@@ -148,3 +148,32 @@ export const SORT_ITEMS = [
     label: "Title (Z-A)",
   },
 ];
+
+export const AVAILABLE_STREAM = ["Stream", "Free", "Ads", "Rent", "Buy"];
+
+export const RELEASE_TYPES = [
+  {
+    name: "Premiere",
+    id: 1,
+  },
+  {
+    name: "Theatrical (limited)",
+    id: 2,
+  },
+  {
+    name: "Theatrical",
+    id: 3,
+  },
+  {
+    name: "Digital",
+    id: 4,
+  },
+  {
+    name: "Physical",
+    id: 5,
+  },
+  {
+    name: "TV",
+    id: 6,
+  },
+];

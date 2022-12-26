@@ -1,4 +1,4 @@
-.secondary_list {
+.secondary-list {
   position: absolute;
   width: 160px;
   height: auto;
@@ -13,35 +13,35 @@
   z-index: 999;
 }
 
-.secondary_list > li {
+.secondary-list > li {
   width: 100%;
   padding: 5px 10px;
   transition: 0.3s;
 }
 
-.secondary_list > li:hover {
+.secondary-list > li:hover {
   background-color: #fff8f8;
 }
 
-.secondary_list > li > a {
+.secondary-list > li > a {
   font-weight: 300;
   text-decoration: none;
   color: #000;
 }
 
-.navigation_list > li:hover .secondary_list {
+.navigation-list > li:hover .secondary-list {
   display: block;
 }
 
 @media (max-width: 980px) {
-  .nav_additional_menu {
+  .nav-additional-menu {
     display: block;
   }
 
-  .nav_additional_menu > .secondary_list > li:last-child {
+  .nav-additional-menu > .secondary-list > li:last-child {
     margin-top: 10px;
   }
-  .secondary_list {
+  .secondary-list {
     position: static;
     width: auto;
     display: block;
@@ -50,14 +50,14 @@
     box-shadow: none;
   }
 
-  .secondary_list > li > a {
+  .secondary-list > li > a {
     padding: 5px 0;
     color: #fff;
     font-weight: 400;
     font-size: 1em;
   }
 
-  .secondary_logo {
+  .secondary-logo {
     display: block;
     width: 55px;
     height: 40px;
@@ -66,13 +66,13 @@
     justify-content: center;
   }
 
-  .secondary_logo > a {
+  .secondary-logo > a {
     display: block;
     width: 100%;
     height: 100%;
   }
 
-  .secondary_logo > a > img {
+  .secondary-logo > a > img {
     width: 100%;
     height: 100%;
     object-fit: contain;

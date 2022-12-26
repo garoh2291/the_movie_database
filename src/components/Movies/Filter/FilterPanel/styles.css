@@ -1,0 +1,25 @@
+.radio-wrap {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.show-label {
+  margin-left: 4px;
+  line-height: 17px;
+}
+
+.check-input {
+  border-color: #adb5bd;
+  color: transparent;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  line-height: initial;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.check-input.k-checkbox:checked:focus {
+  border-color: rgba(var(--accountLightBlue), 1);
+}

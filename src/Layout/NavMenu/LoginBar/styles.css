@@ -1,10 +1,10 @@
-.login_section {
+.login-section {
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.search_btn {
+.search-btn {
   border: none;
   width: 29px;
   height: 29px;
@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.auth_btn {
+.auth-btn {
   display: none;
 
   background-color: transparent;
@@ -27,7 +27,7 @@
   position: relative;
 }
 
-.auth_content_mobile {
+.auth-content-mobile {
   display: none;
   position: absolute;
   top: 35px;
@@ -78,19 +78,19 @@
   border-bottom: 1px solid rgba(33, 37, 41, 0.15);
 }
 
-.auth_content_mobile > .setting > a {
+.auth-content-mobile > .setting > a {
   font-size: 1em;
 }
 
-.auth_content_mobile > .setting > a {
+.auth-content-mobile > .setting > a {
   padding: 10px 20px;
 }
 
-.auth_content_mobile > .setting:first-child {
+.auth-content-mobile > .setting:first-child {
   position: relative;
 }
 
-.auth_content_mobile > .setting:first-child::after {
+.auth-content-mobile > .setting:first-child::after {
   content: "";
   position: absolute;
   left: 106px;
@@ -107,10 +107,10 @@
 }
 
 @media (max-width: 980px) {
-  .login_section > nav {
+  .login-section > nav {
     display: none;
   }
-  .auth_btn {
+  .auth-btn {
     display: inline-block;
   }
 }

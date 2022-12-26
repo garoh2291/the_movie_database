@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { generateQuery, QUERY_ARR } from "../../helpers/query";
 import { setMoviesThunk } from "../../Redux/movieSlice";
+
 import { Body } from "./Body";
 import { FilterSection } from "./Filter";
+
 import "./styles.css";
+
 export const Movies = () => {
   const [page, setPage] = useState(1);
   const [queryArray, setQueryArray] = useState(QUERY_ARR);
   const dispatch = useDispatch();
 
   const getMovieFilter = (filterEntries) => {
+    //add new queries or change
     const newArr = queryArray.filter((item) => {
       return item.qeuryRoute === filterEntries.qeuryRoute;
     });
@@ -28,10 +33,12 @@ export const Movies = () => {
         });
       });
     }
+
     setPage(1);
   };
 
   useEffect(() => {
+    //call to API to get movie list
     const generatedQuery = generateQuery(queryArray);
     const query = `${generatedQuery}page=${page}&`;
 
@@ -39,10 +46,11 @@ export const Movies = () => {
   }, [dispatch, page, queryArray]);
 
   const newItemsHandler = () => {
+    //change page number
     setPage((prev) => prev + 1);
   };
   return (
-    <div className="movies_wrapper">
+    <div className="movies-wrapper">
       <FilterSection onFilter={getMovieFilter} />
       <Body page={page} onHandler={newItemsHandler} setPage={setPage} />
     </div>

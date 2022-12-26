@@ -6,12 +6,13 @@ import { RouteComponent } from "./Routes";
 
 function App() {
   window.onclick = function (e) {
+    //close opened menus
     if (e.target.getAttribute("data-id") === "setting") {
-      removeSetting(e, document.querySelectorAll(".movie_card_box"));
+      removeSetting(e, document.querySelectorAll(".movie-card-box"));
       const addBtn = e.target.parentElement.parentElement.parentElement;
-      addBtn.classList.toggle("open_settings");
+      addBtn.classList.toggle("open-settings");
     } else {
-      removeSetting(e, document.querySelectorAll(".movie_card_box"));
+      removeSetting(e, document.querySelectorAll(".movie-card-box"));
     }
   };
   return (

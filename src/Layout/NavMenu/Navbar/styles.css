@@ -1,4 +1,4 @@
-.navigation_bar {
+.navigation-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,12 +15,12 @@
 }
 
 @media (max-width: 980px) {
-  .navigation_bar > nav {
+  .navigation-bar > nav {
     padding-left: 0;
   }
 
   /* Navigation menu */
-  .navigation_bar {
+  .navigation-bar {
     position: fixed;
     height: calc(100vh - 64px);
     width: 90%;
@@ -33,11 +33,11 @@
     padding: 10px;
   }
 
-  .navigation_bar > a {
+  .navigation-bar > a {
     display: none;
   }
 
-  .navigation_bar.open {
+  .navigation-bar.open {
     display: block;
     left: 0;
   }

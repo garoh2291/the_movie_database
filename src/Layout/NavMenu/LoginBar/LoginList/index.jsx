@@ -3,14 +3,14 @@ import "./styles.css";
 export const LoginList = () => {
   return (
     <nav>
-      <ul className="login_list">
+      <ul className="login-list">
         <li>
           <button className="new">
             <i className="bx bx-plus-medical"></i>
           </button>
         </li>
         <li>
-          <button className="lang_btn">EN</button>
+          <button className="lang-btn">EN</button>
         </li>
         <li>
           <a href="/">Login</a>

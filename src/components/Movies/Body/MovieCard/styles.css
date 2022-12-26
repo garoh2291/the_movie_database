@@ -1,4 +1,4 @@
-.movie_card_box {
+.movie-card-box {
   width: 180px;
   min-width: 150px;
   min-height: 326px;
@@ -11,12 +11,12 @@
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
-.cover_card {
+.cover-card {
   visibility: hidden;
   transition: 0.2s;
 }
 
-.movie_card_box.open_settings .cover_card {
+.movie-card-box.open-settings .cover-card {
   visibility: visible;
   z-index: 500;
   border-radius: 8px;
@@ -27,7 +27,7 @@
   backdrop-filter: blur(20px);
 }
 
-.more_settings {
+.more-settings {
   display: none;
 }
 
@@ -70,7 +70,7 @@
   border-bottom: 1px solid rgba(33, 37, 41, 0.15);
 }
 
-.movie_card_box.open_settings .more_settings {
+.movie-card-box.open-settings .more-settings {
   display: block;
   position: absolute;
   background-color: #fff;
@@ -82,7 +82,7 @@
   z-index: 999;
 }
 
-.movie_img {
+.movie-img {
   position: relative;
   width: 100%;
   min-height: 225px;
@@ -95,14 +95,14 @@
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
-.movie_img > img {
+.movie-img > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px 8px 0px 0px;
 }
 
-.additional_details {
+.additional-details {
   position: absolute;
   width: 25px;
   height: 25px;
@@ -116,13 +116,13 @@
   z-index: 222;
 }
 
-.additional_details:hover {
+.additional-details:hover {
   opacity: 1;
   filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%)
     hue-rotate(156deg) brightness(98%) contrast(99%);
 }
 
-.raiting_details {
+.raiting-details {
   position: absolute;
   bottom: -19px;
   left: 10px;
@@ -138,32 +138,32 @@
   font-size: 0.9em;
   font-weight: 600;
 }
-.raiting_details sup {
+.raiting-details sup {
   font-size: 0.5em;
 }
 
-.additional_details_content {
+.additional-details-content {
   width: 100%;
   padding: 26px 10px 12px 10px;
 }
 
-.additional_details_content > h2 {
+.additional-details-content > h2 {
   font-size: 1em;
 }
 
-.additional_details_content > p {
+.additional-details-content > p {
   font-size: 1em;
   color: rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 1110px) {
-  .movie_card_box {
+  .movie-card-box {
     width: 150px;
   }
 }
 
 @media (max-width: 1010px) {
-  .movie_card_box {
+  .movie-card-box {
     width: 180px;
   }
 }

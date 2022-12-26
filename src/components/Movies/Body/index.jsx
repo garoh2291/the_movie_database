@@ -1,18 +1,20 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+
 import { getWindowDimensions } from "../../../helpers";
+
 import { MovieCard } from "./MovieCard";
 import { CardMobile } from "./MovieCardMobile";
 
 import "./styles.css";
 
 export const Body = (props) => {
-  const { movies } = useSelector((state) => state.movies);
+  const { movies, status } = useSelector((state) => state.movies);
   const { onHandler, page, setPage } = props;
   const { width } = getWindowDimensions();
-  console.log(width);
 
   useEffect(() => {
+    //fetch new movies vie scrolling
     window.onscroll = function (e) {
       const scrollHeight = e.target.documentElement.scrollHeight;
       const currentHeight =
@@ -23,15 +25,23 @@ export const Body = (props) => {
     };
   }, [page, setPage]);
 
+  if (status === "resolved" && !movies.length) {
+    return (
+      <div className="movie-body-wrapper">
+        <h2>No items were found that match your query.</h2>
+      </div>
+    );
+  }
+
   return (
-    <div className="movie_body_wrapper">
-      <div className={`movies_body ${width > 980 ? "" : "no_padding"}`}>
+    <div className="movie-body-wrapper">
+      <div className={`movies-body ${width > 980 ? "" : "no-padding"}`}>
         {width > 980
           ? movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
           : movies.map((movie) => <CardMobile key={movie.id} movie={movie} />)}
       </div>
-      <div className={`body_button_wrapper ${width > 980 ? "" : "no_padding"}`}>
-        {page === 1 && (
+      <div className={`body-button-wrapper ${width > 980 ? "" : "no-padding"}`}>
+        {page === 1 && movies.length > 18 && (
           <button onClick={onHandler}>
             <span>Load More</span>
           </button>
