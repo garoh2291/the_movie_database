@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { MovieSearchContext } from "../../../../context";
-import "./styles.css";
+import { FilterBtn } from "../styles/Filter.styled";
 
 export const FilterButton = (props) => {
   const { searchQueries } = useContext(MovieSearchContext);
@@ -12,14 +12,14 @@ export const FilterButton = (props) => {
     searchQueries.forEach((searchQuery) => onFilter(searchQuery));
   };
   return (
-    <div className="filter-button-wrapper">
-      <button
-        onClick={sendQueries}
-        disabled={!searchQueries.length}
-        className={!searchQueries.length ? "disabled-search-button" : ""}
-      >
+    <FilterBtn
+      color={!searchQueries.length && "rgba(0, 0, 0, 0.5) !important;"}
+      bgColor={!searchQueries.length && "rgba(228, 228, 228, 0.7) !important"}
+      filter={!searchQueries.length && "blur(10px)"}
+    >
+      <button onClick={sendQueries} disabled={!searchQueries.length}>
         Search
       </button>
-    </div>
+    </FilterBtn>
   );
 };

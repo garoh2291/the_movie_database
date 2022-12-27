@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 import { PanelHead } from "../PanelHead";
+import { Panel } from "../styles/Filter.styled";
 import { SortBody } from "./SortBody";
-
-import "./styles.css";
 
 export const SortPanel = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -11,13 +10,13 @@ export const SortPanel = () => {
     setIsVisible((prev) => !prev);
   };
   return (
-    <div className={`filter-panel ${isVisible ? "is-panel-open" : ""}`}>
+    <Panel layout={isVisible && "auto"} visible={isVisible && "visible"}>
       <PanelHead
         isVisible={isVisible}
         changeHandle={changeHandle}
         label={"Sort"}
       />
       <SortBody />
-    </div>
+    </Panel>
   );
 };

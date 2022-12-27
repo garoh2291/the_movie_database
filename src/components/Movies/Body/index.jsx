@@ -6,7 +6,7 @@ import { getWindowDimensions } from "../../../helpers";
 import { MovieCard } from "./MovieCard";
 import { CardMobile } from "./MovieCardMobile";
 
-import "./styles.css";
+import { MovieBody } from "./styles/MovieBody.styled";
 
 export const Body = (props) => {
   const { movies, status } = useSelector((state) => state.movies);
@@ -34,19 +34,19 @@ export const Body = (props) => {
   }
 
   return (
-    <div className="movie-body-wrapper">
-      <div className={`movies-body ${width > 980 ? "" : "no-padding"}`}>
+    <MovieBody>
+      <div>
         {width > 980
           ? movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
           : movies.map((movie) => <CardMobile key={movie.id} movie={movie} />)}
       </div>
-      <div className={`body-button-wrapper ${width > 980 ? "" : "no-padding"}`}>
+      <div>
         {page === 1 && movies.length > 18 && (
           <button onClick={onHandler}>
             <span>Load More</span>
           </button>
         )}
       </div>
-    </div>
+    </MovieBody>
   );
 };

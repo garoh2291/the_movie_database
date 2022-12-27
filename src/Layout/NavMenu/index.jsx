@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { ASSETS_URL } from "../../data";
 import { LoginBar } from "./LoginBar";
 import { Navbar } from "./Navbar";
-import "./styles.css";
+import {
+  NavMenuStyled,
+  NavToggle,
+  SecondaryLogo,
+} from "./styles/NavMenu.styled";
 
 export const NavMenu = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,20 +16,20 @@ export const NavMenu = () => {
   };
 
   return (
-    <div className="navigation-menu">
-      <div className="nav-toggle" onClick={visHandler}>
-        <div className="bar"></div>
-      </div>
+    <NavMenuStyled>
+      <NavToggle onClick={visHandler}>
+        <div></div>
+      </NavToggle>
       <Navbar visible={isVisible} />
-      <div className="secondary-logo">
+      <SecondaryLogo>
         <a href="/">
           <img
-            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+            src={`${ASSETS_URL}logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg`}
             alt="secondary-logo"
           />
         </a>
-      </div>
+      </SecondaryLogo>{" "}
       <LoginBar />
-    </div>
+    </NavMenuStyled>
   );
 };

@@ -1,6 +1,7 @@
 export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API_KEY = process.env.REACT_APP_API_KEY;
 export const IMG_URL = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
+export const ASSETS_URL = "https://www.themoviedb.org/assets/2/v4/";
 
 export const NAVIGATION_LINKS = {
   movies: {

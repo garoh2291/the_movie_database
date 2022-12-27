@@ -1,9 +1,21 @@
 import { BrowserRouter } from "react-router-dom";
-import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { StyledApp } from "./components/styles/App.styled";
+// import "./App.css";
+import GlobalSyles from "./Global";
 import { removeSetting } from "./helpers";
 import { Footer } from "./Layout/Footer";
 import { Header } from "./Layout/Header";
 import { RouteComponent } from "./Routes";
+
+const theme = {
+  colors: {
+    header: "rgb(var(--tmdbDarkBlue))",
+    body: "#fff",
+    footer: "#003333",
+  },
+  mobile: "980px",
+};
 
 function App() {
   window.onclick = function (e) {
@@ -18,11 +30,14 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <RouteComponent />
-        <Footer />
-      </div>
+      <ThemeProvider theme={theme}>
+        <GlobalSyles />
+        <StyledApp>
+          <Header />
+          <RouteComponent />
+          <Footer />
+        </StyledApp>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

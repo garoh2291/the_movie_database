@@ -1,13 +1,13 @@
 import { NAVIGATION_LINKS } from "../../../data";
 import { NavItem } from "./NavItem";
 import { SecondaryList } from "./SecondaryList";
-import "./styles.css";
+import { NavigationList } from "./styles/NavigationList.styled";
 
 export const NavList = () => {
   const { movies, shows, people, more, additional } = NAVIGATION_LINKS;
   return (
     <nav>
-      <ul className="navigation-list">
+      <NavigationList>
         <NavItem category={movies} />
         <NavItem category={shows} />
         <NavItem category={people} />
@@ -16,10 +16,10 @@ export const NavList = () => {
           <button>{more.label}</button>
           <SecondaryList list={more.list} />
         </li>
-        <li className="nav-additional-menu">
+        <li>
           <SecondaryList list={additional.list} />
         </li>
-      </ul>
+      </NavigationList>
     </nav>
   );
 };

@@ -8,6 +8,7 @@ import { Body } from "./Body";
 import { FilterSection } from "./Filter";
 
 import "./styles.css";
+import { MovieWrapper } from "./styles/Movie.styled";
 
 export const Movies = () => {
   const [page, setPage] = useState(1);
@@ -50,9 +51,9 @@ export const Movies = () => {
     setPage((prev) => prev + 1);
   };
   return (
-    <div className="movies-wrapper">
+    <MovieWrapper>
       <FilterSection onFilter={getMovieFilter} />
       <Body page={page} onHandler={newItemsHandler} setPage={setPage} />
-    </div>
+    </MovieWrapper>
   );
 };

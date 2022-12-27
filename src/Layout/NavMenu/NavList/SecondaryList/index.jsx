@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import "./styles.css";
+import { SecondList } from "../styles/NavigationList.styled";
 export const SecondaryList = ({ list }) => {
   return (
-    <ul className="secondary-list">
+    <SecondList>
       {list.map((item, index) => (
         <li key={index}>
           <Link to={item.link}>{item.label}</Link>
         </li>
       ))}
-    </ul>
+    </SecondList>
   );
 };

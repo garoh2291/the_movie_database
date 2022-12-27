@@ -1,12 +1,13 @@
+import { Container } from "../../components/styles/Container.styled";
 import { NavMenu } from "../NavMenu";
-import "./styles.css";
+import { StyledHeader } from "./styles/Header.styled";
 
 export const Header = () => {
   return (
-    <header>
-      <div className="container">
+    <StyledHeader>
+      <Container>
         <NavMenu />
-      </div>
-    </header>
+      </Container>
+    </StyledHeader>
   );
 };

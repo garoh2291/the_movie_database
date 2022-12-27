@@ -2,14 +2,14 @@ import { FilterButton } from "./FilterButton";
 import { FilterPanel } from "./FilterPanel";
 import { SortPanel } from "./SortPanel";
 
-import "./styles.css";
+import { StyledFilter } from "./styles/Filter.styled";
 
 export const FilterSection = ({ onFilter }) => {
   return (
-    <div className="filter-section">
+    <StyledFilter>
       <SortPanel />
       <FilterPanel />
       <FilterButton onFilter={onFilter} />
-    </div>
+    </StyledFilter>
   );
 };

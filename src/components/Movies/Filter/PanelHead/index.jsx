@@ -1,9 +1,9 @@
-import "./styles.css";
+import { StyledHead } from "../styles/Filter.styled";
 
 export const PanelHead = (props) => {
   const { isVisible, changeHandle, label } = props;
   return (
-    <div className="sort-panel-head" onClick={changeHandle}>
+    <StyledHead onClick={changeHandle}>
       <p>{label}</p>
       <span>
         {isVisible ? (
@@ -12,6 +12,6 @@ export const PanelHead = (props) => {
           <i className="bx bxs-chevron-right"></i>
         )}
       </span>
-    </div>
+    </StyledHead>
   );
 };

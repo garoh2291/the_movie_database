@@ -15,12 +15,12 @@ export function removeSetting(e, movies) {
     card.classList.remove("open-settings");
   }
 
-  if (
-    e.target.parentElement &&
-    e.target.parentElement.className !== "auth_btn"
-  ) {
-    document.querySelector(".auth-content-mobile").classList.remove("visible");
-  }
+  // if (
+  //   e.target.parentElement &&
+  //   e.target.parentElement.className !== "auth_btn"
+  // ) {
+  //   document.querySelector(".auth-content-mobile").classList.remove("visible");
+  // }
 }
 
 export function getWindowDimensions() {

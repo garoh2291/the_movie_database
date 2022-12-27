@@ -1,16 +1,20 @@
-import "./styles.css";
+import {
+  LangButton,
+  LoginListStyled,
+  NewButton,
+} from "./styles/LoginList.styled";
 
 export const LoginList = () => {
   return (
     <nav>
-      <ul className="login-list">
+      <LoginListStyled>
         <li>
-          <button className="new">
+          <NewButton>
             <i className="bx bx-plus-medical"></i>
-          </button>
+          </NewButton>
         </li>
         <li>
-          <button className="lang-btn">EN</button>
+          <LangButton>EN</LangButton>
         </li>
         <li>
           <a href="/">Login</a>
@@ -18,7 +22,7 @@ export const LoginList = () => {
         <li>
           <a href="/">Join TMDB</a>
         </li>
-      </ul>
+      </LoginListStyled>
     </nav>
   );
 };

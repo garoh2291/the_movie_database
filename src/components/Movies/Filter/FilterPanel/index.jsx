@@ -13,6 +13,7 @@ import { ShowMeBody } from "./ShowMeBody";
 import { VotesBoard } from "./VoteBoard";
 
 import "./styles.css";
+import { Panel } from "../styles/Filter.styled";
 
 export const FilterPanel = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +21,7 @@ export const FilterPanel = () => {
     setIsVisible((prev) => !prev);
   };
   return (
-    <div className={`filter-panel ${isVisible ? "is-panel-open" : ""}`}>
+    <Panel layout={isVisible && "auto"} visible={isVisible && "visible"}>
       <PanelHead
         isVisible={isVisible}
         changeHandle={changeHandle}
@@ -36,6 +37,6 @@ export const FilterPanel = () => {
       <VotesBoard />
       <RuntimeBody />
       <KeywordBody />
-    </div>
+    </Panel>
   );
 };
