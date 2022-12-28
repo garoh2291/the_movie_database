@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { SORT_ITEMS } from "../../../../../data";
+import { FilterBody } from "../../styles/Filter.styled";
 
-import "./styles.css";
+import { SortWrapper } from "./styles/SortBody.styled";
 
 export const SortBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);
@@ -29,19 +30,17 @@ export const SortBody = () => {
   };
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Sort Results By</h3>
 
-      <div className="sort-wrapper">
+      <SortWrapper layout={!isSortOpen && "none"}>
         <span
           data-id={sortQuery.query}
           onClick={() => setIsSortOpen((prev) => !prev)}
         >
           {sortQuery.label}
         </span>
-        <div
-          className={`sort-select-items ${!isSortOpen ? "non-visible" : ""}`}
-        >
+        <div>
           {SORT_ITEMS.map((item, index) => (
             <span
               data-id={item.query}
@@ -52,7 +51,7 @@ export const SortBody = () => {
             </span>
           ))}
         </div>
-      </div>
-    </div>
+      </SortWrapper>
+    </FilterBody>
   );
 };

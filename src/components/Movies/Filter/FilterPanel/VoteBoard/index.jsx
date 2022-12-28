@@ -1,8 +1,13 @@
 import { useContext } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
+import { FilterBody } from "../../styles/Filter.styled";
 
-import "./styles.css";
+import {
+  StyledCount,
+  StyledCountLine,
+  StyledVoteBoard,
+} from "./styles/VoteBoard.styled";
 
 export const VotesBoard = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);
@@ -19,40 +24,28 @@ export const VotesBoard = () => {
   };
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Minimum User Votes</h3>
-      <div className="vote-board">
-        <span className="vote-count">0</span>
-        <span className="vote-count-line" style={{ left: "22%" }}></span>
-        <span className="vote-count-line" style={{ left: "40%" }}></span>
-        <span className="vote-count-line" style={{ left: "59%" }}></span>
-        <span className="vote-count-line" style={{ left: "77%" }}></span>
-        <span className="vote-count" style={{ left: "15%" }}>
-          100
-        </span>
-        <span className="vote-count" style={{ left: "35%" }}>
-          200
-        </span>
-        <span className="vote-count" style={{ left: "55%" }}>
-          300
-        </span>
-        <span className="vote-count" style={{ left: "73%" }}>
-          400
-        </span>
-
-        <span className="vote-count" style={{ left: "95%" }}>
-          500
-        </span>
+      <StyledVoteBoard>
+        <StyledCount>0</StyledCount>
+        <StyledCountLine left={"22%"}></StyledCountLine>
+        <StyledCountLine left={"40%"}></StyledCountLine>
+        <StyledCountLine left={"59%"}></StyledCountLine>
+        <StyledCountLine left={"77%"}></StyledCountLine>
+        <StyledCount left={"15%"}>100</StyledCount>
+        <StyledCount left={"35%"}>200</StyledCount>
+        <StyledCount left={"55%"}>300</StyledCount>
+        <StyledCount left={"73%"}>400</StyledCount>
+        <StyledCount left={"95%"}>500</StyledCount>
         <input
           type="range"
           min="0"
           max="500"
           step={50}
           defaultValue={0}
-          className="vote-slider"
           onChange={changeVote}
         />
-      </div>
-    </div>
+      </StyledVoteBoard>
+    </FilterBody>
   );
 };

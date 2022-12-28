@@ -1,9 +1,9 @@
+import { useContext } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { StyledApp } from "./components/styles/App.styled";
-// import "./App.css";
+import { MenuContext } from "./context";
 import GlobalSyles from "./Global";
-import { removeSetting } from "./helpers";
 import { Footer } from "./Layout/Footer";
 import { Header } from "./Layout/Header";
 import { RouteComponent } from "./Routes";
@@ -18,14 +18,17 @@ const theme = {
 };
 
 function App() {
+  const { setIsAuthVisible, setIsAdditional } = useContext(MenuContext);
+
   window.onclick = function (e) {
     //close opened menus
-    if (e.target.getAttribute("data-id") === "setting") {
-      removeSetting(e, document.querySelectorAll(".movie-card-box"));
-      const addBtn = e.target.parentElement.parentElement.parentElement;
-      addBtn.classList.toggle("open-settings");
-    } else {
-      removeSetting(e, document.querySelectorAll(".movie-card-box"));
+
+    if (e.target.getAttribute("data-id") !== "auth") {
+      setIsAuthVisible(false);
+    }
+
+    if (e.target.getAttribute("data-id") !== "setting") {
+      setIsAdditional("");
     }
   };
   return (

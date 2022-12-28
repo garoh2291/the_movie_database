@@ -7,7 +7,6 @@ import { setMoviesThunk } from "../../Redux/movieSlice";
 import { Body } from "./Body";
 import { FilterSection } from "./Filter";
 
-import "./styles.css";
 import { MovieWrapper } from "./styles/Movie.styled";
 
 export const Movies = () => {

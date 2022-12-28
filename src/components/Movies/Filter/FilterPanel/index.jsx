@@ -12,7 +12,6 @@ import { ScoreBody } from "./ScoreBody";
 import { ShowMeBody } from "./ShowMeBody";
 import { VotesBoard } from "./VoteBoard";
 
-import "./styles.css";
 import { Panel } from "../styles/Filter.styled";
 
 export const FilterPanel = () => {

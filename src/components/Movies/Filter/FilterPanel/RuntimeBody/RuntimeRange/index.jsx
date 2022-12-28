@@ -1,19 +1,22 @@
+import {
+  ScoreIndicator,
+  ScoreLine,
+  SmallValueChangeBtn,
+  StyledIndicator,
+  StyledScores,
+  VoteLabel,
+} from "../../ScoreBody/styles/Scores.styled";
+
 export const RuntimeRange = (props) => {
   const { setScore, minTime, maxTime } = props;
   return (
-    <div className="score-wrap">
-      <span className="min-vote-label">0</span>
-      <span className="vote-label" style={{ left: `23%` }}>
-        120
-      </span>
-      <span className="vote-label" style={{ left: `53%` }}>
-        240
-      </span>
-      <span className="vote-label" style={{ left: `81%` }}>
-        360
-      </span>
+    <StyledScores>
+      <VoteLabel left={"-4px"}>0</VoteLabel>
+      <VoteLabel left={"23%"}>120</VoteLabel>
+      <VoteLabel left={"53%"}>240</VoteLabel>
+      <VoteLabel left={"81%"}>360</VoteLabel>
 
-      <ul className="indicator">
+      <StyledIndicator>
         <li data-id={0} title="0" onClick={setScore}></li>
         <li data-id={15} title="15" onClick={setScore}></li>
         <li data-id={30} title="30" onClick={setScore}></li>
@@ -42,35 +45,20 @@ export const RuntimeRange = (props) => {
         <li data-id={375} title="375" onClick={setScore}></li>
         <li data-id={390} title="390" onClick={setScore}></li>
         <li data-id={400} title="400" onClick={setScore}></li>
-      </ul>
-      <button
-        className="change-value"
-        style={{
-          left: `calc(${minTime}% / 4 - 7.5px ) `,
-          height: "10px",
-          width: "10px",
-          top: "-3px",
-        }}
+      </StyledIndicator>
+      <SmallValueChangeBtn
+        left={`calc(${minTime}% / 4 - 7.5px ) `}
         title={minTime}
-      ></button>
-      <button
-        className="change-value"
-        style={{
-          left: `calc(${maxTime}% / 4 - 10px ) `,
-          height: "10px",
-          width: "10px",
-          top: "-3px",
-        }}
+      ></SmallValueChangeBtn>
+      <SmallValueChangeBtn
+        left={`calc(${maxTime}% / 4 - 10px ) `}
         title={maxTime}
-      ></button>
-      <div className="score-wrap-indicator"></div>
-      <div
-        className="score-wrap-indicator active"
-        style={{
-          width: `calc(${maxTime - minTime}% / 4 )`,
-          left: `calc(${minTime}% / 4)`,
-        }}
-      ></div>
-    </div>
+      ></SmallValueChangeBtn>
+      <ScoreLine></ScoreLine>
+      <ScoreIndicator
+        layout={`calc(${maxTime - minTime}% / 4 )`}
+        left={`calc(${minTime}% / 4)`}
+      ></ScoreIndicator>
+    </StyledScores>
   );
 };

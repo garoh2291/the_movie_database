@@ -13,9 +13,9 @@ export const FilterButton = (props) => {
   };
   return (
     <FilterBtn
-      color={!searchQueries.length && "rgba(0, 0, 0, 0.5) !important;"}
+      clr={!searchQueries.length && "rgba(0, 0, 0, 0.5) !important;"}
       bgColor={!searchQueries.length && "rgba(228, 228, 228, 0.7) !important"}
-      filter={!searchQueries.length && "blur(10px)"}
+      bFilter={!searchQueries.length && "blur(10px)"}
     >
       <button onClick={sendQueries} disabled={!searchQueries.length}>
         Search

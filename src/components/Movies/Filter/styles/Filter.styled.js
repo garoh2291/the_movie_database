@@ -23,14 +23,14 @@ export const FilterBtn = styled.div`
     border: none;
     width: 100%;
     height: 100%;
-    color: ${({ color }) => color || "#fff"};
+    color: ${({ clr }) => clr || "#fff"};
     font-size: 1.2em;
     line-height: 1;
     font-weight: 600;
     background-color: ${({ bgColor }) =>
       bgColor || "rgba(var(--accountLightBlue), 1)"};
     cursor: pointer;
-    backdrop-filter: ${({ filter }) => filter || "none"};
+    backdrop-filter: ${({ bFilter }) => bFilter || "none"};
   }
 `;
 
@@ -57,5 +57,16 @@ export const Panel = styled.div`
 
   &:not(:first-child) {
     margin-top: 20px;
+  }
+`;
+
+export const FilterBody = styled.div`
+  border-top: 1px solid #eee;
+  padding: 14px 16px 16px 16px;
+
+  & > h3 {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 10px;
   }
 `;

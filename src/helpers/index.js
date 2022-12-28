@@ -10,19 +10,6 @@ export function getPopularity(num) {
   }
 }
 
-export function removeSetting(e, movies) {
-  for (let card of movies) {
-    card.classList.remove("open-settings");
-  }
-
-  // if (
-  //   e.target.parentElement &&
-  //   e.target.parentElement.className !== "auth_btn"
-  // ) {
-  //   document.querySelector(".auth-content-mobile").classList.remove("visible");
-  // }
-}
-
 export function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {

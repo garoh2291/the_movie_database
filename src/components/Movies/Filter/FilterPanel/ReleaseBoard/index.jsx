@@ -1,8 +1,9 @@
 import { useContext } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
+import { FilterBody } from "../../styles/Filter.styled";
 
-import "./styles.css";
+import { StyledRelease } from "./styles/Release.styled";
 
 export const RealeaseBoard = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);
@@ -31,10 +32,10 @@ export const RealeaseBoard = () => {
     ]);
   };
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Release Dates </h3>
-      <div className="release-wrap">
-        <div className="start-date">
+      <StyledRelease>
+        <div>
           <span>from</span>
           <input
             type="date"
@@ -44,7 +45,7 @@ export const RealeaseBoard = () => {
             defaultValue={""}
           />
         </div>
-        <div className="start-date">
+        <div>
           <span>to</span>
           <input
             type="date"
@@ -54,7 +55,7 @@ export const RealeaseBoard = () => {
             onChange={setEndDate}
           />
         </div>
-      </div>
-    </div>
+      </StyledRelease>
+    </FilterBody>
   );
 };

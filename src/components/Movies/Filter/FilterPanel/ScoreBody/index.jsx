@@ -1,8 +1,16 @@
 import { useContext, useState } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
+import { FilterBody } from "../../styles/Filter.styled";
 
-import "./styles.css";
+import {
+  ScoreIndicator,
+  ScoreLine,
+  StyledIndicator,
+  StyledScores,
+  ValueChangeBtn,
+  VoteLabel,
+} from "./styles/Scores.styled";
 
 export const ScoreBody = () => {
   const [minScore, setMinScore] = useState(0);
@@ -38,14 +46,14 @@ export const ScoreBody = () => {
   };
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>User Score</h3>
-      <div className="score-wrap">
-        <span className="min-vote-label">0</span>
-        <span className="avg-vote-label">5</span>
-        <span className="max-vote-label">10</span>
+      <StyledScores>
+        <VoteLabel left={"-4px"}>0</VoteLabel>
+        <VoteLabel left={"47%"}>5</VoteLabel>
+        <VoteLabel left={"calc(100% - 8px)"}>10</VoteLabel>
 
-        <ul className="indicator">
+        <StyledIndicator>
           <li data-id={0} onClick={setScore}></li>
           <li data-id={1} onClick={setScore}></li>
           <li data-id={2} onClick={setScore}></li>
@@ -57,24 +65,21 @@ export const ScoreBody = () => {
           <li data-id={8} onClick={setScore}></li>
           <li data-id={9} onClick={setScore}></li>
           <li data-id={10} onClick={setScore}></li>
-        </ul>
-        <button
-          className="change-value"
-          style={{ left: `calc(${minScore}% * 10 - 7.5px ) ` }}
-        ></button>
-        <button
-          className="change-value"
-          style={{ left: `calc(${maxScore}% * 10 - 7px ) ` }}
-        ></button>
-        <div className="score-wrap-indicator"></div>
-        <div
-          className="score-wrap-indicator active"
-          style={{
-            width: `calc(${maxScore - minScore}% * 10 )`,
-            left: `calc(${minScore}% * 10)`,
-          }}
-        ></div>
-      </div>
-    </div>
+        </StyledIndicator>
+        <ValueChangeBtn
+          left={`calc(${minScore}% * 10 - 7.5px ) `}
+          title={minScore}
+        ></ValueChangeBtn>
+        <ValueChangeBtn
+          left={`calc(${maxScore}% * 10 - 7px ) `}
+          title={maxScore}
+        ></ValueChangeBtn>
+        <ScoreLine></ScoreLine>
+        <ScoreIndicator
+          layout={`calc(${maxScore - minScore}% * 10 )`}
+          left={`calc(${minScore}% * 10)`}
+        ></ScoreIndicator>
+      </StyledScores>
+    </FilterBody>
   );
 };

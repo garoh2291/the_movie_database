@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
+import { FilterBody } from "../../styles/Filter.styled";
 
 import { RuntimeRange } from "./RuntimeRange";
 
@@ -11,7 +12,7 @@ export const RuntimeBody = () => {
 
   const setScore = (e) => {
     const newMaxValue = e.target.getAttribute("data-id");
-    console.log(newMaxValue);
+
     if (Math.abs(newMaxValue - minTime) >= Math.abs(newMaxValue - maxTime)) {
       //change max score query
       setMaxTime(newMaxValue);
@@ -38,9 +39,9 @@ export const RuntimeBody = () => {
     }
   };
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Runtime</h3>
       <RuntimeRange setScore={setScore} minTime={minTime} maxTime={maxTime} />
-    </div>
+    </FilterBody>
   );
 };

@@ -1,7 +1,9 @@
+import { FilterBody } from "../../styles/Filter.styled";
+
 export const CertificateBody = () => {
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Certification</h3>
-    </div>
+    </FilterBody>
   );
 };

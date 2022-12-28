@@ -4,8 +4,9 @@ import { useContext, useState } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { API_KEY } from "../../../../../data";
+import { FilterBody } from "../../styles/Filter.styled";
 
-import "./styles.css";
+import { StyledDropdown, StyledKeywords } from "./styles/Keywords.styled";
 
 export const KeywordBody = () => {
   const [keywords, setKeyWords] = useState([]);
@@ -61,15 +62,11 @@ export const KeywordBody = () => {
   }, [selectedKeys, setSearchQueries]);
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Keywords</h3>
-      <div className="keyword-body">
+      <StyledKeywords layout={!selectedKeys.length && "none"}>
         <input type="text" onChange={searchKeys} />
-        <div
-          className={`sort-select-items ${
-            !keywords.length || !isVisible ? "non-visible" : ""
-          }`}
-        >
+        <StyledDropdown layout={(!keywords.length || !isVisible) && "none"}>
           {keywords.map((item, index) => (
             <span
               data-id={item.id}
@@ -79,17 +76,13 @@ export const KeywordBody = () => {
               {item.name}
             </span>
           ))}
-        </div>
-        <div
-          className={`selected-keys ${
-            !selectedKeys.length ? "non-visible" : ""
-          }`}
-        >
+        </StyledDropdown>
+        <div>
           {Array.from(selectedKeys).map((item, index) => (
             <span key={item.id}>{item.name}</span>
           ))}
         </div>
-      </div>
-    </div>
+      </StyledKeywords>
+    </FilterBody>
   );
 };

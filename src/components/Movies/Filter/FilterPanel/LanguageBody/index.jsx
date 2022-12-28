@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { API_KEY } from "../../../../../data";
+import { SortWrapper } from "../../SortPanel/SortBody/styles/SortBody.styled";
+import { FilterBody } from "../../styles/Filter.styled";
 
 export const LanguageBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);
@@ -46,18 +48,16 @@ export const LanguageBody = () => {
   };
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Language</h3>
-      <div className="sort-wrapper">
+      <SortWrapper layout={!isLangOpen && "none"}>
         <span
           data-id={langQuery.query}
           onClick={() => setIsLangOpen((prev) => !prev)}
         >
           {langQuery.label}
         </span>
-        <div
-          className={`sort-select-items ${!isLangOpen ? "non-visible" : ""}`}
-        >
+        <div>
           {isLanguage.map((item, index) => (
             <span
               data-id={item.iso_639_1}
@@ -68,7 +68,7 @@ export const LanguageBody = () => {
             </span>
           ))}
         </div>
-      </div>
-    </div>
+      </SortWrapper>
+    </FilterBody>
   );
 };

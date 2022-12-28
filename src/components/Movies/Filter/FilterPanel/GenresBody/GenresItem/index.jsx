@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import "./styles.css";
+import { GenresBtn } from "../styles/Genres.styled";
 
 export const GenresItem = ({ genre, onCallback }) => {
   const [selectedBtn, setSelectedBtn] = useState(false);
@@ -10,11 +9,12 @@ export const GenresItem = ({ genre, onCallback }) => {
     onCallback(id);
   };
   return (
-    <button
-      className={`genre-item ${selectedBtn ? "selected-btn" : ""}`}
+    <GenresBtn
+      bColor={selectedBtn && "rgba(var(--tmdbLightBlue), 1)"}
+      clr={selectedBtn && "#fff"}
       onClick={onChangeBtn}
     >
       {name}
-    </button>
+    </GenresBtn>
   );
 };

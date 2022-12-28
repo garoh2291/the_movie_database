@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MenuContext } from "../../../context";
 import { ASSETS_URL } from "../../../data";
 import { LoginList } from "./LoginList";
 import {
@@ -10,10 +11,7 @@ import {
 } from "./styles/LoginSection.styled";
 
 export const LoginBar = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const onChangeHandler = () => {
-    setIsVisible((prev) => !prev);
-  };
+  const { isAuthVisible, onChangeHandler } = useContext(MenuContext);
   return (
     <LoginSection>
       <LoginList />
@@ -21,10 +19,11 @@ export const LoginBar = () => {
         <img
           src={`${ASSETS_URL}glyphicons/basic/glyphicons-basic-4-user-7de7dfcae838579a18f4eebc5b8847230d154718e481c5cd01c477cfcbc85993.svg`}
           alt="login"
+          data-id="auth"
         />
-        <MobileAuth layout={isVisible && "block"}>
+        <MobileAuth layout={isAuthVisible && "block"} data-id="authMenu">
           <div>
-            <Link to={""}>Login</Link>
+            <Link to={"sdd"}>Login</Link>
           </div>
           <div>
             <Link to={""}>Sign Up</Link>

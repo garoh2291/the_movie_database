@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import store from "./Redux";
 
-// import "./index.css";
 import App from "./App";
+import { MenuContextProvider } from "./context/provider";
 
 const aplication = (
   <Provider store={store}>
-    <App />
+    <MenuContextProvider>
+      <App />
+    </MenuContextProvider>
   </Provider>
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));

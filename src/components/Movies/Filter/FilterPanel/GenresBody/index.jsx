@@ -4,10 +4,11 @@ import { useState } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { API_KEY } from "../../../../../data";
+import { FilterBody } from "../../styles/Filter.styled";
 
 import { GenresItem } from "./GenresItem";
 
-import "./styles.css";
+import { StyledGenres } from "./styles/Genres.styled";
 
 export const GenresBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);
@@ -61,13 +62,13 @@ export const GenresBody = () => {
   }, []);
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Genres</h3>
-      <div className="genres-items">
+      <StyledGenres>
         {genres.map((btn) => (
           <GenresItem genre={btn} key={btn.id} onCallback={changeGenres} />
         ))}
-      </div>
-    </div>
+      </StyledGenres>
+    </FilterBody>
   );
 };

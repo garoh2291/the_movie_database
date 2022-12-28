@@ -4,8 +4,12 @@ import { useState } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
 import { AVAILABLE_STREAM } from "../../../../../data";
+import { FilterBody } from "../../styles/Filter.styled";
 
-import "./styles.css";
+import {
+  StyledCategories,
+  StyledRadioBtn,
+} from "./styles/AvailableSection.styled";
 
 export const AvailableBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);
@@ -64,41 +68,33 @@ export const AvailableBody = () => {
   };
 
   return (
-    <div className="sort-panel-body">
+    <FilterBody>
       <h3>Availabilities</h3>
-      <label className="radio-wrap">
+      <StyledRadioBtn>
         <input
           type="checkbox"
           name="all_availabilities"
           id="all_availabilities"
           defaultChecked={isAll}
-          className="check-input"
           onClick={changeAvailables}
         />
-        <label htmlFor="all_availabilities" className="show-label">
-          Search all availabilities?
-        </label>
-      </label>
-      <div
-        className={`availability-categories ${!isAll ? "show-categories" : ""}`}
-      >
+        <label htmlFor="all_availabilities">Search all availabilities?</label>
+      </StyledRadioBtn>
+      <StyledCategories layout={!isAll && "block"}>
         {AVAILABLE_STREAM.map((item, index) => (
-          <label className="radio-wrap" key={index}>
+          <StyledRadioBtn key={index}>
             <input
               type="checkbox"
               name={item}
               id={`${item}-id`}
               defaultChecked
-              className="check-input"
               value={item}
               onChange={() => changeSearchItems(item)}
             />
-            <label htmlFor={`${item}-id`} className="show-label">
-              {item}
-            </label>
-          </label>
+            <label htmlFor={`${item}-id`}>{item}</label>
+          </StyledRadioBtn>
         ))}
-      </div>
-    </div>
+      </StyledCategories>
+    </FilterBody>
   );
 };

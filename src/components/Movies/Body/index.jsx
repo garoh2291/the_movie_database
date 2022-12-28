@@ -27,9 +27,9 @@ export const Body = (props) => {
 
   if (status === "resolved" && !movies.length) {
     return (
-      <div className="movie-body-wrapper">
+      <MovieBody>
         <h2>No items were found that match your query.</h2>
-      </div>
+      </MovieBody>
     );
   }
 
