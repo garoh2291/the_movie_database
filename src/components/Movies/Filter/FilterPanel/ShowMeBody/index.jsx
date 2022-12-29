@@ -1,5 +1,5 @@
-import { FilterBody } from "../../styles/Filter.styled";
-import { ShowRadioBtn } from "./styles/ShowMe.styled";
+import { FilterBody } from "../../Filter.styled";
+import { ShowRadioBtn } from "./ShowMe.styled";
 
 export const ShowMeBody = () => {
   return (

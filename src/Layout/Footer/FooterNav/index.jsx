@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledFooterNav } from "../styles/Footer.styled";
+import { StyledFooterNav } from "../Footer.styled";
 
 export const FooterNav = ({ links }) => {
   const { label, list } = links;

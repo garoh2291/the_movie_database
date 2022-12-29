@@ -4,11 +4,11 @@ import { useState } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { API_KEY } from "../../../../../data";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
 import { GenresItem } from "./GenresItem";
 
-import { StyledGenres } from "./styles/Genres.styled";
+import { StyledGenres } from "./Genres.styled";
 
 export const GenresBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);

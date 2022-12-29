@@ -3,8 +3,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { API_KEY } from "../../../../../data";
-import { SortWrapper } from "../../SortPanel/SortBody/styles/SortBody.styled";
-import { FilterBody } from "../../styles/Filter.styled";
+import { SortWrapper } from "../../SortPanel/SortBody/SortBody.styled";
+import { FilterBody } from "../../Filter.styled";
 
 export const LanguageBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);

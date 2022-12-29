@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GenresBtn } from "../styles/Genres.styled";
+import { GenresBtn } from "../Genres.styled";
 
 export const GenresItem = ({ genre, onCallback }) => {
   const [selectedBtn, setSelectedBtn] = useState(false);

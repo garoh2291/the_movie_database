@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SecondList } from "../styles/NavigationList.styled";
+import { SecondList } from "../NavigationList.styled";
 export const SecondaryList = ({ list }) => {
   return (
     <SecondList>

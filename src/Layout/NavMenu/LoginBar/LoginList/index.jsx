@@ -1,8 +1,4 @@
-import {
-  LangButton,
-  LoginListStyled,
-  NewButton,
-} from "./styles/LoginList.styled";
+import { LangButton, LoginListStyled, NewButton } from "./LoginList.styled";
 
 export const LoginList = () => {
   return (

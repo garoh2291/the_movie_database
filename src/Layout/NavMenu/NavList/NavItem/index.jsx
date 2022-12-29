@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SecondaryList } from "../SecondaryList";
-import { NavigationItem } from "../styles/NavigationList.styled";
+import { NavigationItem } from "../NavigationList.styled";
 
 export const NavItem = (props) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -5,7 +5,7 @@ import {
   StyledIndicator,
   StyledScores,
   VoteLabel,
-} from "../../ScoreBody/styles/Scores.styled";
+} from "../../ScoreBody/Scores.styled";
 
 export const RuntimeRange = (props) => {
   const { setScore, minTime, maxTime } = props;

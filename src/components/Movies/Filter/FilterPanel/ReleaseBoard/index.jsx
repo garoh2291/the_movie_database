@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
-import { StyledRelease } from "./styles/Release.styled";
+import { StyledRelease } from "./Release.styled";
 
 export const RealeaseBoard = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);

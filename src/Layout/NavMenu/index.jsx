@@ -2,11 +2,7 @@ import { useState } from "react";
 import { ASSETS_URL } from "../../data";
 import { LoginBar } from "./LoginBar";
 import { Navbar } from "./Navbar";
-import {
-  NavMenuStyled,
-  NavToggle,
-  SecondaryLogo,
-} from "./styles/NavMenu.styled";
+import { NavMenuStyled, NavToggle, SecondaryLogo } from "./NavMenu.styled";
 
 export const NavMenu = () => {
   const [isVisible, setIsVisible] = useState(false);

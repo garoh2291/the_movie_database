@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { SORT_ITEMS } from "../../../../../data";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
-import { SortWrapper } from "./styles/SortBody.styled";
+import { SortWrapper } from "./SortBody.styled";
 
 export const SortBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);

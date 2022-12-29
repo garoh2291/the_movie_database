@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { MovieSearchContext } from "../../../../context";
-import { FilterBtn } from "../styles/Filter.styled";
+import { FilterBtn } from "../Filter.styled";
 
 export const FilterButton = (props) => {
   const { searchQueries } = useContext(MovieSearchContext);

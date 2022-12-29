@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ASSETS_URL } from "../../../data";
 import { NavList } from "../NavList";
-import { NavigationBar } from "./styles/NavigationBar.styled";
+import { NavigationBar } from "./NavigationBar.styled";
 
 export const Navbar = (props) => {
   const { visible } = props;

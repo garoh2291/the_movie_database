@@ -1,4 +1,4 @@
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
 export const CertificateBody = () => {
   return (

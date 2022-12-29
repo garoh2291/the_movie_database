@@ -4,12 +4,9 @@ import { useState } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
 import { AVAILABLE_STREAM } from "../../../../../data";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
-import {
-  StyledCategories,
-  StyledRadioBtn,
-} from "./styles/AvailableSection.styled";
+import { StyledCategories, StyledRadioBtn } from "./AvailableSection.styled";
 
 export const AvailableBody = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);

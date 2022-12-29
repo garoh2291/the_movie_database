@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
 import {
   ScoreIndicator,
@@ -10,7 +10,7 @@ import {
   StyledScores,
   ValueChangeBtn,
   VoteLabel,
-} from "./styles/Scores.styled";
+} from "./Scores.styled";
 
 export const ScoreBody = () => {
   const [minScore, setMinScore] = useState(0);

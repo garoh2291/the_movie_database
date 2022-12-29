@@ -1,4 +1,4 @@
-import { StyledHead } from "../styles/Filter.styled";
+import { StyledHead } from "../Filter.styled";
 
 export const PanelHead = (props) => {
   const { isVisible, changeHandle, label } = props;

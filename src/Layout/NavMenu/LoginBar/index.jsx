@@ -8,7 +8,7 @@ import {
   LoginSection,
   MobileAuth,
   SearchBtn,
-} from "./styles/LoginSection.styled";
+} from "./LoginSection.styled";
 
 export const LoginBar = () => {
   const { isAuthVisible, onChangeHandler } = useContext(MenuContext);

@@ -1,13 +1,13 @@
 import { useContext } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
 import {
   StyledCount,
   StyledCountLine,
   StyledVoteBoard,
-} from "./styles/VoteBoard.styled";
+} from "./VoteBoard.styled";
 
 export const VotesBoard = () => {
   const { setSearchQueries } = useContext(MovieSearchContext);

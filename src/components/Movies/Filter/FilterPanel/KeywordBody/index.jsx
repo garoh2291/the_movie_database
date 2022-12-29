@@ -4,9 +4,9 @@ import { useContext, useState } from "react";
 import { MovieSearchContext } from "../../../../../context";
 
 import { API_KEY } from "../../../../../data";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
-import { StyledDropdown, StyledKeywords } from "./styles/Keywords.styled";
+import { StyledDropdown, StyledKeywords } from "./Keywords.styled";
 
 export const KeywordBody = () => {
   const [keywords, setKeyWords] = useState([]);

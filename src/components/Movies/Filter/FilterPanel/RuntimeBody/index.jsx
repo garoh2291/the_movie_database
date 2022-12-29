@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
 import { MovieSearchContext } from "../../../../../context";
-import { FilterBody } from "../../styles/Filter.styled";
+import { FilterBody } from "../../Filter.styled";
 
 import { RuntimeRange } from "./RuntimeRange";
 

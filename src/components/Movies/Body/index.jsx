@@ -6,7 +6,7 @@ import { getWindowDimensions } from "../../../helpers";
 import { MovieCard } from "./MovieCard";
 import { CardMobile } from "./MovieCardMobile";
 
-import { MovieBody } from "./styles/MovieBody.styled";
+import { MovieBody } from "./MovieBody.styled";
 
 export const Body = (props) => {
   const { movies, status } = useSelector((state) => state.movies);

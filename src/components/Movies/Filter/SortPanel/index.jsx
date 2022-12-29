@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { PanelHead } from "../PanelHead";
-import { Panel } from "../styles/Filter.styled";
+import { Panel } from "../Filter.styled";
 import { SortBody } from "./SortBody";
 
 export const SortPanel = () => {

@@ -1,11 +1,7 @@
 import { Container } from "../../components/styles/Container.styled";
 import { FOOTER_LINKS } from "../../data";
 import { FooterNav } from "./FooterNav";
-import {
-  CommunityBtn,
-  FooterContent,
-  StyledFooter,
-} from "./styles/Footer.styled";
+import { CommunityBtn, FooterContent, StyledFooter } from "./Footer.styled";
 
 const { basic, involved, community, legal } = FOOTER_LINKS;
 

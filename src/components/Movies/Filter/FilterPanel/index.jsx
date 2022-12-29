@@ -12,7 +12,7 @@ import { ScoreBody } from "./ScoreBody";
 import { ShowMeBody } from "./ShowMeBody";
 import { VotesBoard } from "./VoteBoard";
 
-import { Panel } from "../styles/Filter.styled";
+import { Panel } from "../Filter.styled";
 
 export const FilterPanel = () => {
   const [isVisible, setIsVisible] = useState(false);

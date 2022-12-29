@@ -7,7 +7,7 @@ import { setMoviesThunk } from "../../Redux/movieSlice";
 import { Body } from "./Body";
 import { FilterSection } from "./Filter";
 
-import { MovieWrapper } from "./styles/Movie.styled";
+import { MovieWrapper } from "./Movie.styled";
 
 export const Movies = () => {
   const [page, setPage] = useState(1);
