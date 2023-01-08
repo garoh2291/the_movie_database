@@ -10,7 +10,10 @@ export const RealeaseBoard = () => {
 
   const setStartDate = (e) => {
     // change start date of release
-    const { value } = e.target;
+    const {
+      target: { value },
+    } = e;
+
     setSearchQueries((prev) => [
       ...prev,
       {
@@ -22,7 +25,9 @@ export const RealeaseBoard = () => {
 
   const setEndDate = (e) => {
     // change end date of release
-    const { value } = e.target;
+    const {
+      target: { value },
+    } = e;
     setSearchQueries((prev) => [
       ...prev,
       {

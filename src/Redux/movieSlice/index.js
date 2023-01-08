@@ -11,9 +11,9 @@ export const setMoviesThunk = createAsyncThunk(
       if (!res.ok) {
         throw new Error("something is wrong");
       }
-      const data = await res.json();
+      const { results: data } = await res.json();
 
-      return { data: data.results, page };
+      return { data, page };
     } catch (error) {
       rejectWithValue(error);
     }
@@ -47,14 +47,13 @@ const movieSlice = createSlice({
       state.error = null;
     },
     [setMoviesThunk.fulfilled]: (state, action) => {
-      const newGames = action.payload.data;
-      const page = action.payload.page;
+      const { data, page } = action.payload;
 
       state.status = "resolved";
       if (page === 1) {
-        state.movies = newGames;
+        state.movies = data;
       } else {
-        state.movies = [...state.movies, ...newGames];
+        state.movies = [...state.movies, ...data];
       }
     },
     [setMoviesThunk.rejected]: setError,

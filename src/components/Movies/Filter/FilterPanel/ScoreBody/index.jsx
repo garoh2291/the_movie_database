@@ -11,6 +11,7 @@ import {
   ValueChangeBtn,
   VoteLabel,
 } from "./Scores.styled";
+import { SCORES } from "../../../../../data";
 
 export const ScoreBody = () => {
   const [minScore, setMinScore] = useState(0);
@@ -54,17 +55,14 @@ export const ScoreBody = () => {
         <VoteLabel left={"calc(100% - 8px)"}>10</VoteLabel>
 
         <StyledIndicator>
-          <li data-id={0} onClick={setScore}></li>
-          <li data-id={1} onClick={setScore}></li>
-          <li data-id={2} onClick={setScore}></li>
-          <li data-id={3} onClick={setScore}></li>
-          <li data-id={4} onClick={setScore}></li>
-          <li data-id={5} onClick={setScore}></li>
-          <li data-id={6} onClick={setScore}></li>
-          <li data-id={7} onClick={setScore}></li>
-          <li data-id={8} onClick={setScore}></li>
-          <li data-id={9} onClick={setScore}></li>
-          <li data-id={10} onClick={setScore}></li>
+          {SCORES.map((score) => (
+            <li
+              key={score}
+              data-id={score}
+              title={score}
+              onClick={setScore}
+            ></li>
+          ))}
         </StyledIndicator>
         <ValueChangeBtn
           left={`calc(${minScore}% * 10 - 7.5px ) `}

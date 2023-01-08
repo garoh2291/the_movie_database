@@ -12,26 +12,24 @@ export const MovieCardBox = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 
-  & > div:last-child {
-    width: 100%;
-    padding: 26px 10px 12px 10px;
-  }
-
-  & > div:last-child > h2 {
-    font-size: 1em;
-  }
-
-  & > div:last-child > p {
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.6);
-  }
-
   @media (max-width: 1110px) {
     width: 150px;
   }
 
   @media (max-width: 1010px) {
     width: 180px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+    min-height: unset;
+    height: 143px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(var(--lightGrey), 1);
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 6px;
+    display: flex;
   }
 `;
 
@@ -45,6 +43,10 @@ export const StyledCover = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(20px);
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: none;
+  }
 `;
 
 export const MovieSetting = styled.div`
@@ -91,6 +93,10 @@ export const MovieSetting = styled.div`
 
   & > div:last-child > a {
     justify-content: space-between;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: none;
   }
 `;
 
@@ -154,4 +160,95 @@ export const MovieImg = styled.div`
     filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%)
       hue-rotate(156deg) brightness(98%) contrast(99%);
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 95px;
+    min-height: unset;
+    height: 100%;
+    border-radius: 3px 0px 0px 3px;
+    background-color: #dbdbdb;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg");
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px 0px 0px 3px;
+    }
+
+    & > div:nth-child(2) {
+      display: none;
+    }
+
+    & > div:last-child {
+      display: none;
+    }
+  }
 `;
+
+export const MovieInfo = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 26px 10px 12px 10px;
+
+  & > div:first-child > h2 {
+    font-size: 1em;
+  }
+
+  & > div:first-child > p {
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  & > div:last-child {
+    display: none;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: calc(100% - 95px);
+    height: 100%;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > div:first-child {
+      width: 100%;
+    }
+
+    & > div:first-child > h2 {
+      font-size: 1em;
+    }
+
+    & > div:first-child > p {
+      font-size: 0.9em;
+      white-space: nowrap;
+      color: #999;
+    }
+
+    & > div:last-child {
+      width: 100%;
+      display: block;
+      margin-top: 20px;
+      max-height: 3.2em;
+      height: auto;
+    }
+
+    & > div:last-child > p {
+      font-size: 0.8.9emem;
+      line-height: 1.2em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+`;
+
+// & > div:last-child {
+//   width: 100%;
+//   padding: 26px 10px 12px 10px;
+// }

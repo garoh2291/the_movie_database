@@ -1,27 +1,29 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-
-import { getWindowDimensions } from "../../../helpers";
-
 import { MovieCard } from "./MovieCard";
-import { CardMobile } from "./MovieCardMobile";
+import { MovieBody } from "./Dashboard.styled";
 
-import { MovieBody } from "./MovieBody.styled";
-
-export const Body = (props) => {
+export const Dashboard = (props) => {
   const { movies, status } = useSelector((state) => state.movies);
   const { onHandler, page, setPage } = props;
-  const { width } = getWindowDimensions();
+  const dashboardRef = useRef(null);
 
   useEffect(() => {
-    //fetch new movies vie scrolling
-    window.onscroll = function (e) {
+    // fetch new movies vie scrolling
+
+    function handleScroll(e) {
       const scrollHeight = e.target.documentElement.scrollHeight;
       const currentHeight =
         e.target.documentElement.scrollTop + window.innerHeight;
       if (currentHeight + 1 > scrollHeight && page > 1) {
         setPage((prev) => prev + 1);
       }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [page, setPage]);
 
@@ -34,11 +36,11 @@ export const Body = (props) => {
   }
 
   return (
-    <MovieBody>
+    <MovieBody ref={dashboardRef}>
       <div>
-        {width > 980
-          ? movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
-          : movies.map((movie) => <CardMobile key={movie.id} movie={movie} />)}
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
       </div>
       <div>
         {page === 1 && movies.length > 18 && (

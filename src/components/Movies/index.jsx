@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { generateQuery, QUERY_ARR } from "../../helpers/query";
 import { setMoviesThunk } from "../../Redux/movieSlice";
 
-import { Body } from "./Body";
+import { Dashboard } from "./Dashboard";
 import { FilterSection } from "./Filter";
 
 import { MovieWrapper } from "./Movie.styled";
@@ -52,7 +52,7 @@ export const Movies = () => {
   return (
     <MovieWrapper>
       <FilterSection onFilter={getMovieFilter} />
-      <Body page={page} onHandler={newItemsHandler} setPage={setPage} />
+      <Dashboard page={page} onHandler={newItemsHandler} setPage={setPage} />
     </MovieWrapper>
   );
 };

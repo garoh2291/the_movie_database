@@ -1,8 +1,6 @@
-import { useContext } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { StyledApp } from "./components/styles/App.styled";
-import { MenuContext } from "./context";
 import GlobalSyles from "./Global";
 import { Footer } from "./Layout/Footer";
 import { Header } from "./Layout/Header";
@@ -18,19 +16,6 @@ const theme = {
 };
 
 function App() {
-  const { setIsAuthVisible, setIsAdditional } = useContext(MenuContext);
-
-  window.onclick = function (e) {
-    //close opened menus
-
-    if (e.target.getAttribute("data-id") !== "auth") {
-      setIsAuthVisible(false);
-    }
-
-    if (e.target.getAttribute("data-id") !== "setting") {
-      setIsAdditional("");
-    }
-  };
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>

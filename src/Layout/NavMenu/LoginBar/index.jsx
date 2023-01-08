@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { MenuContext } from "../../../context";
 import { ASSETS_URL } from "../../../data";
@@ -11,7 +11,25 @@ import {
 } from "./LoginSection.styled";
 
 export const LoginBar = () => {
-  const { isAuthVisible, onChangeHandler } = useContext(MenuContext);
+  const { isAuthVisible, onChangeHandler, setIsAuthVisible } =
+    useContext(MenuContext);
+  const authRef = useRef(null);
+
+  useEffect(() => {
+    //closing opened autorization menu , when clicked outside
+    function handleClickOutside(e) {
+      if (authRef.current && !authRef.current.contains(e.target)) {
+        setIsAuthVisible("");
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [authRef, setIsAuthVisible]);
+
   return (
     <LoginSection>
       <LoginList />
@@ -21,7 +39,7 @@ export const LoginBar = () => {
           alt="login"
           data-id="auth"
         />
-        <MobileAuth layout={isAuthVisible && "block"} data-id="authMenu">
+        <MobileAuth layout={isAuthVisible && "block"} ref={authRef}>
           <div>
             <Link to={"sdd"}>Login</Link>
           </div>

@@ -78,7 +78,7 @@ export const KeywordBody = () => {
           ))}
         </StyledDropdown>
         <div>
-          {Array.from(selectedKeys).map((item, index) => (
+          {[...selectedKeys].map((item, index) => (
             <span key={item.id}>{item.name}</span>
           ))}
         </div>
